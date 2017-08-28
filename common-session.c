@@ -333,9 +333,9 @@ void session_cleanup() {
 }
 
 void send_session_identification() {
-	buffer *writebuf = buf_new(strlen(LOCAL_IDENT "\r\n") + 1);
-	buf_putbytes(writebuf, (const unsigned char *) LOCAL_IDENT "\r\n", strlen(LOCAL_IDENT "\r\n"));
-	writebuf_enqueue(writebuf, 0);
+	//buffer *writebuf = buf_new(strlen(LOCAL_IDENT "\r\n") + 1);
+	//buf_putbytes(writebuf, (const unsigned char *) LOCAL_IDENT "\r\n", strlen(LOCAL_IDENT "\r\n"));
+	//writebuf_enqueue(writebuf, 0);
 }
 
 static void read_session_identification() {

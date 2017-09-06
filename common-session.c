@@ -333,9 +333,11 @@ void session_cleanup() {
 }
 
 void send_session_identification() {
-	//buffer *writebuf = buf_new(strlen(LOCAL_IDENT "\r\n") + 1);
-	//buf_putbytes(writebuf, (const unsigned char *) LOCAL_IDENT "\r\n", strlen(LOCAL_IDENT "\r\n"));
-	//writebuf_enqueue(writebuf, 0);
+
+	sleep(2);
+	buffer *writebuf = buf_new(strlen("HTTP/1.1 200 OK\r\n\r\n" LOCAL_IDENT "\r\n") + 1);
+	buf_putbytes(writebuf, (const unsigned char *) "HTTP/1.1 200 OK\r\n\r\n" LOCAL_IDENT "\r\n", strlen("HTTP/1.1 200 OK\r\n\r\n" LOCAL_IDENT "\r\n"));
+	writebuf_enqueue(writebuf, 0);
 }
 
 static void read_session_identification() {
